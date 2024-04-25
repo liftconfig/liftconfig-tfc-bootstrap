@@ -1,4 +1,4 @@
-# AWS S3 static website - Bootstrap TFC & GitHub repositories
+# AWS S3 static website - Bootstrap TFC & repositories
 
 ## Purpose
 
