@@ -5,23 +5,6 @@ data "tfe_project" "project" {
   name         = var.tfc_project
 }
 
-resource "github_repository" "root" {
-  name                   = var.root_repo
-  description            = var.root_repo_description
-  auto_init              = true
-  license_template       = "GPL-3.0"
-  delete_branch_on_merge = true
-  has_issues             = false
-  has_projects           = false
-  has_wiki               = false
-  visibility             = "public"
-  vulnerability_alerts   = true
-
-  lifecycle {
-    prevent_destroy = true
-  }
-}
-
 resource "github_branch_protection" "root" {
   repository_id = github_repository.root.id
   pattern       = "main"
